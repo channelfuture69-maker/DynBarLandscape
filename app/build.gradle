@@ -1,0 +1,28 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.farewell.dynbarland'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.farewell.dynbarland'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName '0.1'
+    }
+    buildTypes {
+        release { minifyEnabled false }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // API Xposed hanya dipakai saat kompilasi; kelas aslinya disediakan LSPosed saat runtime.
+    compileOnly project(':xposed-stub')
+}
